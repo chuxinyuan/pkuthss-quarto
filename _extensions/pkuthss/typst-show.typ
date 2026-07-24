@@ -18,7 +18,7 @@ $if(cheader)$
   cheader: "$cheader$",
 $endif$
 $if(ctitle)$
-  ctitle: "$ctitle$",
+  ctitle: "$ctitle$".replace("\\\n", "\n").replace(" \n", "\n"),
 $endif$
 $if(etitle)$
   etitle: "$etitle$",

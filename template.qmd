@@ -1,8 +1,8 @@
 ---
-title: "北京大学学位论文模板"
 format:
   pkuthss-typst:
     bibfile: ref.bib
+    keep-typ: false
 # ========== 基本信息 ==========
 cauthor: "张三"
 eauthor: "San Zhang"
@@ -10,7 +10,7 @@ studentid: "23000xxxxx"
 blindid: "L2023XXXXX"
 cthesisname: "博士研究生学位论文"
 cheader: "北京大学博士学位论文"
-ctitle: "北京大学学位论文模板使用指南"
+ctitle: "北京大学学位论文 \n\nQuarto 模板使用指南"
 etitle: "User Guide for PKU Dissertation Quarto Template"
 school: "信息科学技术学院"
 cfirstmajor: "计算机科学与技术"

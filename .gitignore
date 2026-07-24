@@ -6,6 +6,11 @@
 *.html
 *.odt
 
+# Typst 中间产物
+/.luarc.json
+/template_files/figure-typst/
+*.typ
+
 # Typst 包缓存
 /.quarto/typst/packages/
 
