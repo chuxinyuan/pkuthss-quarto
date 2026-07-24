@@ -34,6 +34,6 @@ quarto use template https://gh-proxy.com/https://github.com/chuxinyuan/pkuthss-q
 
 感谢 [pkuthss-typst](https://github.com/pku-typst/pkuthss-typst) 项目成员前期的伟大贡献，让论文排版这项工作变得简单而有趣，北大的同学们从此可以专心致力于学术研究，而不必浪费时间在论文排版上。
 
-# 项目许可
+## 项目许可
 
 本项目采用 MIT 许可证。
