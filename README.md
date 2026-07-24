@@ -26,7 +26,7 @@ quarto use template https://gh-proxy.com/https://github.com/chuxinyuan/pkuthss-q
 
 1. 使用前请先按照 [pkuthss-typst](https://github.com/pku-typst/pkuthss-typst) 项目要求进行字体配置[^footnote]。
 
-[^footnote]: 为了尽可能减少烦人的 warning，建议按照所有涉及的字体。
+[^footnote]: 为了尽可能减少烦人的 warning，建议安装所有涉及的字体。
 
 2. 示例文档仅仅作为演示之用，实际写作过程中强烈建议 YAML 部分和每一章拆分成一个个单独的文件模块化管理。
 
