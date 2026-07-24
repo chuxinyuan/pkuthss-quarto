@@ -42,7 +42,7 @@ $if(csupervisor)$
   csupervisor: "$csupervisor$",
 $endif$
 $if(esupervisor)$
-  esupervisor: "$esupervisor$",
+  esupervisor: "$esupervisor$".replace("~", "\u{00A0}"),
 $endif$
 $if(date-year)$
   date: (year: $date-year$, month: $date-month$),
