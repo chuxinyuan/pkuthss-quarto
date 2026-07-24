@@ -37,7 +37,7 @@ contributes:
               context {
                 let ch = chaptercounter.at(here()).first()
                 let num = counter(figure.where(kind: "quarto-float-fig")).at(here()).first()
-                [图 #numbering("1.1", ch, num) #it.caption.body]
+                [图#numbering("1.1", ch, num) #it.caption.body]
               }
             }
             #show figure.where(kind: "quarto-float-tbl"): it => {
@@ -46,7 +46,7 @@ contributes:
               context {
                 let ch = chaptercounter.at(here()).first()
                 let num = counter(figure.where(kind: "quarto-float-tbl")).at(here()).first()
-                [表 #numbering("1.1", ch, num) #it.caption.body]
+                [表#numbering("1.1", ch, num) #it.caption.body]
               }
               v(4pt)
               it.body
@@ -58,25 +58,21 @@ contributes:
                 let el = it.element
                 let el_loc = el.location()
                 if el.kind == "quarto-float-fig" {
-                  link(el_loc, [
-                    #引用记号.图
-                    #chinesenumbering(
-                      chaptercounter.at(el_loc).first(),
-                      counter(figure.where(kind: "quarto-float-fig")).at(el_loc).first(),
-                      location: el_loc,
-                    )
-                  ])
-                  h(0.25em, weak: true)
+                  h(0em, weak: true)
+                  link(el_loc, [#引用记号.图#chinesenumbering(
+                    chaptercounter.at(el_loc).first(),
+                    counter(figure.where(kind: "quarto-float-fig")).at(el_loc).first(),
+                    location: el_loc,
+                  )])
+                  h(0em, weak: true)
                 } else if el.kind == "quarto-float-tbl" {
-                  link(el_loc, [
-                    #引用记号.表
-                    #chinesenumbering(
-                      chaptercounter.at(el_loc).first(),
-                      counter(figure.where(kind: "quarto-float-tbl")).at(el_loc).first(),
-                      location: el_loc,
-                    )
-                  ])
-                  h(0.25em, weak: true)
+                  h(0em, weak: true)
+                  link(el_loc, [#引用记号.表#chinesenumbering(
+                    chaptercounter.at(el_loc).first(),
+                    counter(figure.where(kind: "quarto-float-tbl")).at(el_loc).first(),
+                    location: el_loc,
+                  )])
+                  h(0em, weak: true)
                 } else {
                   it
                 }
