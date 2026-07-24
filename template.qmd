@@ -19,7 +19,7 @@ emajor: "Computer Software and Theory"
 direction: "程序设计语言与编译技术"
 csupervisor: "李四 教授"
 esupervisor: "Prof. Si Li"
-date-year: 2026
+date-year: 2027
 date-month: 6
 degree-type: "academic"
 # ========== 中文摘要 ==========
@@ -67,7 +67,7 @@ alwaysstartodd: false
 cleandeclaration: true
 preview: true
 bibstyle: "numeric"
-bibversion: "2015"
+bibversion: "2025"  # 2026 年 7 月 1 日起实施
 ---
 
 # 引言 {#sec-intro}
@@ -149,7 +149,13 @@ $$ {#eq-euler}
 
 ## 参考文献
 
-可以在正文中引用参考文献，如 @wang2010guide 和 @kopka2004guide 所示。
+引入参考文献方式：
+
+```md
+可以像这样引用参考文献 [@wang2010guide] [@kopka2004guide]。
+```
+
+显示效果：可以像这样引用参考文献 [@wang2010guide] [@kopka2004guide]。
 
 ## 代码
 
