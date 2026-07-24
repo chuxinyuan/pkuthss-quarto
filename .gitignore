@@ -1,5 +1,6 @@
 # Quarto 渲染缓存
 /.quarto/
+**/*.quarto_ipynb
 
 # 编译产物
 *.pdf
