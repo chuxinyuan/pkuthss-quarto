@@ -2,16 +2,16 @@
 
 ## 安装方式
 
-- 方式一：命令行安装
+- 方式一：R 代码安装
+
+```r
+quarto::quarto_use_template("chuxinyuan/pkuthss-quarto")
+```
+
+- 方式二：命令行安装
 
 ```bash
 quarto use template chuxinyuan/pkuthss-quarto
-```
-
-- 方式二：R 代码安装
-
-```r
-quarto::quarto_use_template("chuxinyuan/pkuthss-quarto", no_prompt = TRUE)
 ```
 
 国内用户如果安装困难，可以试试如下命令：
