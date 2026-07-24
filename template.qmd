@@ -1,0 +1,176 @@
+---
+title: "北京大学学位论文模板"
+format:
+  pkuthss-typst:
+    bibfile: ref.bib
+# ========== 基本信息 ==========
+cauthor: "张三"
+eauthor: "San Zhang"
+studentid: "23000xxxxx"
+blindid: "L2023XXXXX"
+cthesisname: "博士研究生学位论文"
+cheader: "北京大学博士学位论文"
+ctitle: "北京大学学位论文模板使用指南"
+etitle: "User Guide for PKU Dissertation Quarto Template"
+school: "信息科学技术学院"
+cfirstmajor: "计算机科学与技术"
+cmajor: "计算机软件与理论"
+emajor: "Computer Software and Theory"
+direction: "程序设计语言与编译技术"
+csupervisor: "李四 教授"
+esupervisor: "Prof. Si Li"
+date-year: 2026
+date-month: 6
+degree-type: "academic"
+# ========== 中文摘要 ==========
+cabstract: |
+  本文是北京大学学位论文 Typst 模板的使用指南。该模板基于 Typst 排版系统，
+  提供了符合北京大学研究生院学位论文要求的排版功能。
+
+  模板支持封面、摘要、目录、图表列表、正文、参考文献、附录、致谢等全部功能，
+  并支持盲审模式、预览模式等选项。通过 Quarto 扩展，用户可以使用 Markdown 语法编写论文，
+  同时享受 Typst 的高质量排版效果。
+ckeywords:
+  - Typst
+  - Quarto
+  - 学位论文
+  - 排版模板
+  - 北京大学
+# ========== 英文摘要 ==========
+eabstract: |
+  This document is a user guide for the Typst template for Peking University
+  dissertations. The template is based on the Typst typesetting system and
+  provides formatting capabilities that comply with the requirements of the
+  PKU Graduate School.
+
+  The template supports cover page, abstracts, table of contents, lists of
+  figures and tables, main body, bibliography, appendices, acknowledgements,
+  and more. Through the Quarto extension, users can write their theses in
+  Markdown while enjoying high-quality Typst typesetting.
+ekeywords:
+  - Typst
+  - Quarto
+  - Dissertation
+  - Template
+  - Peking University
+# ========== 致谢 ==========
+acknowledgements: |
+  感谢导师李四教授在论文写作过程中的悉心指导。感谢实验室的同学和朋友们给予的帮助和支持。感谢家人一直以来的关心和鼓励。
+# ========== 可选参数 ==========
+first-line-indent: "2em"
+outlinedepth: 3
+blind: false
+listofimage: true
+listoftable: true
+listofcode: true
+alwaysstartodd: false
+cleandeclaration: true
+preview: true
+bibstyle: "numeric"
+bibversion: "2015"
+---
+
+# 引言 {#sec-intro}
+
+本文档介绍如何使用 Quarto + Typst 撰写北京大学学位论文。Quarto 扩展允许用户使用 Markdown 语法编写论文，同时利用 Typst 的高质量排版引擎生成 PDF。
+
+## 研究背景
+
+学位论文排版是一项繁琐但重要的工作。传统的 LaTeX 模板虽然功能强大，但学习曲线陡峭。Typst 作为新一代排版系统，具有语法简洁、编译速度快的优点。结合 Quarto 的 Markdown 写作体验，可以进一步提高写作效率。
+
+## 本文结构
+
+本文 @sec-quickstart 介绍快速开始方法，@sec-features 介绍模板的各项功能。
+
+# 快速开始 {#sec-quickstart}
+
+## 安装
+
+使用以下命令安装 Quarto 扩展：
+
+```bash
+quarto use template chuxinyuan/pkuthss-quarto
+```
+
+## 编译
+
+使用以下命令编译论文：
+
+```bash
+quarto render template.qmd
+```
+
+# 模板功能 {#sec-features}
+
+## 图片
+
+可以在论文中插入图片，并使用交叉引用，如下方 @fig-logo 所示。
+
+![示例图片](assets/pkulogo.svg){#fig-logo width=20%}
+
+也可以通过代码自动生成图片，如 @fig-nile 所示。
+
+```{r}
+#| label: fig-nile
+#| fig-cap: "尼罗河年流量（1871–1970）"
+#| echo: false
+plot(Nile)
+```
+
+## 表格
+
+可以使用 Markdown 语法创建表格，并使用交叉引用。如下方 @tbl-example 所示。
+
+| 功能     | 支持情况 |
+| -------- | -------- |
+| 封面     | 是       |
+| 摘要     | 是       |
+| 目录     | 是       |
+| 参考文献 | 是       |
+
+: 示例表格 {#tbl-example}
+
+也可以通过代码生成表格，，如 @tbl-iris 所示。
+
+```{r}
+#| label: tbl-iris
+#| tbl-cap: "鸢尾花花萼、花瓣长度和宽度特征"
+#| echo: false
+knitr::kable(head(iris, 5))
+```
+
+## 公式
+
+可以使用 LaTeX 语法编写数学公式，并使用交叉引用。如 @eq-euler 所示。
+
+$$
+e^{i\pi} + 1 = 0
+$$ {#eq-euler}
+
+## 参考文献
+
+可以在正文中引用参考文献，如 @wang2010guide 和 @kopka2004guide 所示。
+
+## 代码
+
+可以在论文中嵌入代码块：
+
+```{r}
+#| echo: true
+#| eval: false
+plot(Nile)
+```
+
+可能你已经注意到了，@fig-nile 就是通过这行代码生成的。
+
+# 结论
+
+本文介绍了北京大学学位论文 Quarto + Typst 模板的使用方法。通过该模板，用户可以使用 Markdown 语法编写论文，同时享受 Typst 的高质量排版效果。
+
+```{=typst}
+#appendix()
+```
+
+# 附录内容
+
+这是附录部分的内容。附录章节使用大写字母编号。

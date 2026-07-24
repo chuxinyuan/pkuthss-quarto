@@ -1,0 +1,98 @@
+title: PKU Thesis (Typst)
+author: Xinyuan Chu
+version: "0.1.0"
+quarto-required: ">=1.9.0"
+contributes:
+  formats:
+    typst:
+      template: template.typ
+      template-partials:
+        - typst-template.typ
+        - typst-show.typ
+      citeproc: false
+      include-in-header:
+        - text: |
+            #import "@preview/modern-pku-thesis:0.2.3": (
+              appendixcounter, chaptercounter, chinesenumbering, 字号, 引用记号,
+            )
+            #let equation-numbering = (..nums) => context {
+              if appendixcounter.at(here()).first() < 10 {
+                numbering("(1.1)", chaptercounter.at(here()).first(), ..nums)
+              } else {
+                numbering("(A.1)", chaptercounter.at(here()).first(), ..nums)
+              }
+            }
+            #show heading.where(level: 1): it => {
+              if it.numbering != none {
+                counter(figure.where(kind: "quarto-float-fig")).update(())
+                counter(figure.where(kind: "quarto-float-tbl")).update(())
+              }
+              it
+            }
+            #show figure.where(kind: "quarto-float-fig"): it => {
+              set align(center)
+              it.body
+              v(4pt)
+              set text(字号.五号)
+              context {
+                let ch = chaptercounter.at(here()).first()
+                let num = counter(figure.where(kind: "quarto-float-fig")).at(here()).first()
+                [图 #numbering("1.1", ch, num) #it.caption.body]
+              }
+            }
+            #show figure.where(kind: "quarto-float-tbl"): it => {
+              set align(center)
+              set text(字号.五号)
+              context {
+                let ch = chaptercounter.at(here()).first()
+                let num = counter(figure.where(kind: "quarto-float-tbl")).at(here()).first()
+                [表 #numbering("1.1", ch, num) #it.caption.body]
+              }
+              v(4pt)
+              it.body
+            }
+      include-before-body:
+        - text: |
+            #show ref: it => {
+              if it.element != none and it.element.func() == figure {
+                let el = it.element
+                let el_loc = el.location()
+                if el.kind == "quarto-float-fig" {
+                  link(el_loc, [
+                    #引用记号.图
+                    #chinesenumbering(
+                      chaptercounter.at(el_loc).first(),
+                      counter(figure.where(kind: "quarto-float-fig")).at(el_loc).first(),
+                      location: el_loc,
+                    )
+                  ])
+                  h(0.25em, weak: true)
+                } else if el.kind == "quarto-float-tbl" {
+                  link(el_loc, [
+                    #引用记号.表
+                    #chinesenumbering(
+                      chaptercounter.at(el_loc).first(),
+                      counter(figure.where(kind: "quarto-float-tbl")).at(el_loc).first(),
+                      location: el_loc,
+                    )
+                  ])
+                  h(0.25em, weak: true)
+                } else {
+                  it
+                }
+              } else {
+                it
+              }
+            }
+      blind: false
+      preview: true
+      alwaysstartodd: true
+      listofimage: true
+      listoftable: true
+      listofcode: true
+      cleandeclaration: false
+      outlinedepth: 3
+      degree-type: "academic"
+      bibstyle: "numeric"
+      bibversion: "2015"
+      first-line-indent: "2em"

@@ -1,0 +1,24 @@
+# Quarto 渲染缓存
+/.quarto/
+
+# 编译产物
+*.pdf
+*.html
+*.odt
+
+# Typst 包缓存
+/.quarto/typst/packages/
+
+# 临时与系统文件
+.DS_Store
+*.log
+*.tmp
+~$*
+Thumbs.db
+
+# R / Python 项目残留(按需)
+/.Rproj.user/
+/.Rhistory
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
