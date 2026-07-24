@@ -34,31 +34,33 @@ quarto render template.qmd
 
 可以在论文中插入图片，并使用交叉引用，如下方 @fig-logo 所示。
 
-![示例图片](assets/pkulogo.svg){#fig-logo width=20%}
+![示例图片](assets/pkulogo.svg){#fig-logo width=30%}
 
-也可以通过代码自动生成图片，如 @fig-nile 所示。
+也可以通过代码自动生成图片，如 @fig-cars 所示。
 
 ```{r}
-#| label: fig-nile
-#| fig-cap: "尼罗河年流量（1871–1970）"
+#| label: fig-cars
+#| fig-cap: "汽车的速度与制动距离散点图"
+#| fig-width: 6
+#| fig-height: 5
 #| echo: false
-plot(Nile)
+par(mar = c(4, 4, .1, .1), las = 1)
+plot(cars, xlab = "速度(mph)", ylab = "制动距离(ft)")
 ```
 
 ## 表格
 
-可以使用 Markdown 语法创建表格，并使用交叉引用。如下方 @tbl-example 所示。
+可以使用 Markdown 语法创建表格，并使用交叉引用。如下方 @tbl-features 所示。
 
-| 功能     | 支持情况 |  说明  |
-| -------- | --------| ------ |
-| 封面     | 是       |        |
-| 摘要     | 是       |        |
-| 目录     | 是       |        |
-| 参考文献 | 是       |        |
-| ...     | ...      | ...    |
-| 三线表   | 暂不支持  | 需要改 Typst 模板代码 |
+| 模块 | 状态 | 备注 |
+| :--- | :---: | :--- |
+| 封面 | 🟢 已支持 | |
+| 摘要 | 🟢 已支持 | |
+| 目录 | 🟢 已支持 | |
+| 参考文献 | 🟢 已支持 | |
+| 三线表 | 🔴 待改进 | 需要改 Typst 模板代码 |
 
-: 示例表格 {#tbl-example}
+: 各模块功能点实现情况 {#tbl-features}
 
 也可以通过代码生成表格，如 @tbl-iris 所示。
 
@@ -66,7 +68,6 @@ plot(Nile)
 #| label: tbl-iris
 #| tbl-cap: "鸢尾花花萼、花瓣长度和宽度特征"
 #| echo: false
-
 knitr::kable(head(iris, 5))
 ```
 
@@ -78,9 +79,21 @@ $$
 e^{i\pi} + 1 = 0
 $$ {#eq-euler}
 
+## 代码
+
+可以在论文中嵌入代码块和内联代码，这里以 R 代码为例：
+
+```{r}
+options(digits = 4)
+fit = lm(dist ~ speed, data = cars)
+b = coef(fit)
+```
+
+上面回归方程中的斜率是`r b[2]`，完整的回归方程为：$\widehat{dist} = `r b[1]` + `r b[2]`speed$
+
 ## 参考文献
 
-引入参考文献[^ftref]方式：
+引入参考文献方式[^ftref]：
 
 [^ftref]: 索引文献应采用“顺序编码制”或“著者—出版年制”，两者只能选用一种，不得混用。
 
@@ -89,18 +102,6 @@ $$ {#eq-euler}
 ```
 
 显示效果：可以像这样引用参考文献 [@wang2010guide] [@kopka2004guide]。
-
-## 代码
-
-可以在论文中嵌入代码块，这里以 R 代码为例：
-
-```{r}
-#| echo: true
-#| eval: false
-plot(Nile)
-```
-
-可能你已经注意到了，@fig-nile 就是通过这行代码生成的。
 
 # 结论
 
