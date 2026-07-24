@@ -60,9 +60,9 @@ acknowledgements: |
 first-line-indent: "2em"
 outlinedepth: 3
 blind: false
-listofimage: true
-listoftable: true
-listofcode: true
+listofimage: false
+listoftable: false
+listofcode: false
 alwaysstartodd: false
 cleandeclaration: true
 preview: true
@@ -149,7 +149,9 @@ $$ {#eq-euler}
 
 ## 参考文献
 
-引入参考文献方式：
+引入参考文献[^refnote]方式：
+
+[^refnote]: 索引文献应采用“顺序编码制”或“著者—出版年制”，两者只能选用一种，不得混用。
 
 ```md
 可以像这样引用参考文献 [@wang2010guide] [@kopka2004guide]。
