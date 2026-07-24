@@ -21,7 +21,7 @@
 ~$*
 Thumbs.db
 
-# R / Python 项目残留(按需)
+# R / Python 项目残留
 /.Rproj.user/
 /.Rhistory
 __pycache__/
