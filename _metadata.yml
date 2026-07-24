@@ -1,0 +1,70 @@
+format:
+  pkuthss-typst:
+    bibfile: ref.bib
+    keep-typ: false
+# ========== 基本信息 ==========
+cauthor: "张三"
+eauthor: "San Zhang"
+studentid: "23000xxxxx"
+blindid: "L2023XXXXX"
+cthesisname: "博士研究生学位论文"
+cheader: "北京大学博士学位论文"
+ctitle: "北京大学学位论文 \n\nQuarto 模板使用指南"
+etitle: "User Guide for PKU Dissertation Quarto Template"
+school: "信息科学技术学院"
+cfirstmajor: "计算机科学与技术"
+cmajor: "计算机软件与理论"
+emajor: "Computer Software and Theory"
+direction: "程序设计语言与编译技术"
+csupervisor: "李四 教授"
+esupervisor: "Prof. Si Li"
+date-year: 2027
+date-month: 6
+degree-type: "academic"
+# ========== 参考文献 ==========
+bibstyle: "numeric"
+bibversion: "2025"  # 2026 年 7 月 1 日起实施
+# ========== 可选参数 ==========
+first-line-indent: "2em"
+outlinedepth: 3
+blind: false
+preview: true
+listofimage: false
+listoftable: false
+listofcode: false
+alwaysstartodd: false
+cleandeclaration: true
+# ========== 中文摘要 ==========
+cabstract: |
+  本文是北京大学学位论文 Typst 模板的使用指南。该模板基于 Typst 排版系统，
+  提供了符合北京大学研究生院学位论文要求的排版功能。
+
+  模板支持封面、摘要、目录、图表列表、正文、参考文献、附录、致谢等全部功能，
+  并支持盲审模式、预览模式等选项。通过 Quarto 扩展，用户可以使用 Markdown 语法编写论文，
+  同时享受 Typst 的高质量排版效果。
+ckeywords:
+  - Typst
+  - Quarto
+  - 学位论文
+  - 排版模板
+  - 北京大学
+# ========== 英文摘要 ==========
+eabstract: |
+  This document is a user guide for the Typst template for Peking University
+  dissertations. The template is based on the Typst typesetting system and
+  provides formatting capabilities that comply with the requirements of the
+  PKU Graduate School.
+
+  The template supports cover page, abstracts, table of contents, lists of
+  figures and tables, main body, bibliography, appendices, acknowledgements,
+  and more. Through the Quarto extension, users can write their theses in
+  Markdown while enjoying high-quality Typst typesetting.
+ekeywords:
+  - Typst
+  - Quarto
+  - Dissertation
+  - Template
+  - Peking University
+# ========== 致谢 ==========
+acknowledgements: |
+  感谢导师李四教授在论文写作过程中的悉心指导。感谢实验室的同学和朋友们给予的帮助和支持。感谢家人一直以来的关心和鼓励。
