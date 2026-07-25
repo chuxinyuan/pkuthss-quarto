@@ -1,5 +1,7 @@
 # 北京大学学位论文 Quarto 扩展
 
+![demo](./assets/template.gif)
+
 ## 安装方式
 
 - 方式一：R 代码安装
