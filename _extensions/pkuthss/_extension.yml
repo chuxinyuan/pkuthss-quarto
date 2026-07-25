@@ -1,4 +1,4 @@
-title: PKU Thesis (Typst)
+title: PKU Thesis Quarto Extensions(Typst)
 author: Xinyuan Chu
 version: "0.1.0"
 quarto-required: ">=1.10.18"
@@ -15,6 +15,32 @@ contributes:
             #import "@preview/modern-pku-thesis:0.2.3": (
               appendixcounter, chaptercounter, chinesenumbering, 字号, 引用记号,
             )
+            #let _find-table(body) = {
+              if type(body) == content {
+                if body.func() == table { return body }
+                for child in body.children {
+                  if type(child) == content and child.func() == table { return child }
+                }
+              }
+              return none
+            }
+            #let _booktab-style(it) = {
+              let f = it.fields()
+              let children = f.remove("children")
+              f.stroke = none
+              let no-hlines = children.filter(c => c.func() != table.hline)
+              let header = no-hlines.find(c => c.func() == table.header)
+              let footer = no-hlines.find(c => c.func() == table.footer)
+              let cells = no-hlines.filter(c => c.func() != table.header and c.func() != table.footer)
+              block(breakable: true, table(
+                ..f,
+                table.hline(stroke: 1.5pt),
+                ..if header != none { (header, table.hline(stroke: 0.75pt)) } else { () },
+                ..cells,
+                ..if footer != none { (footer,) } else { () },
+                table.hline(stroke: 1.5pt),
+              ))
+            }
             #let equation-numbering = (..nums) => context {
               if appendixcounter.at(here()).first() < 10 {
                 numbering("(1.1)", chaptercounter.at(here()).first(), ..nums)
@@ -49,7 +75,8 @@ contributes:
                 [表#numbering("1.1", ch, num) #it.caption.body]
               }
               v(4pt)
-              it.body
+              let tbl = _find-table(it.body)
+              if tbl != none { _booktab-style(tbl) } else { it.body }
             }
       include-before-body:
         - text: |
