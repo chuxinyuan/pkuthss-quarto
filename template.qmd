@@ -68,7 +68,7 @@ plot(cars, xlab = "速度(mph)", ylab = "制动距离(ft)")
 #| label: tbl-iris
 #| tbl-cap: "鸢尾花花萼、花瓣长度和宽度特征"
 #| echo: false
-knitr::kable(head(iris, 5))
+tinytable::tt(head(iris, 5))
 ```
 
 ## 公式
