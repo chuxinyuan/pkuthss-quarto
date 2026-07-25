@@ -1,6 +1,6 @@
 # 北京大学学位论文 Quarto 扩展
 
-![demo](./assets/template.gif)
+<img src="./assets/template.gif" alt="demo" width="80%">
 
 ## 安装方式
 
