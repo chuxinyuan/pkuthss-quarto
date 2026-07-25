@@ -1,6 +1,8 @@
 # 北京大学学位论文 Quarto 扩展
 
-<img src="./assets/template.gif" alt="demo" width="80%">
+<p align="center">
+  <img src="./assets/template.gif" alt="demo" width="60%">
+</p>
 
 ## 安装方式
 
